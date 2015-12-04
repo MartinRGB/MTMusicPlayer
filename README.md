@@ -1,10 +1,10 @@
 # MTTVPlayer
 
 *simple implement an AV Player &amp; my workmates Xerlee's Animation*
-
-
-
  
+ 
+  
+  
 Inspired by Xerlee's design work [
 Music App For Tv/Pad](https://dribbble.com/shots/2377536-Music-App-For-Tv-Pad) 
 
