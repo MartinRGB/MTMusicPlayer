@@ -66,7 +66,7 @@ class ViewController: UICollectionViewController {
     
     private let customSlider:UISlider! = UISlider()
     private var sliderNowValue:Float = 0.0
-    
+    private var sliderIsDragging = false;
     
 //MARK:ViewDidLoad
     
@@ -234,6 +234,10 @@ class ViewController: UICollectionViewController {
         
         
         customSlider.addTarget(self, action: "sliderValueDidChange:", forControlEvents: .ValueChanged)
+        customSlider.addTarget(self, action: "sliderTouchDragEnter:", forControlEvents: .TouchDown)
+        customSlider.addTarget(self, action: "sliderTouchDragExit:", forControlEvents: .TouchUpInside)
+        customSlider.addTarget(self, action: "sliderTouchDragExit:", forControlEvents: .TouchUpOutside)
+        customSlider.addTarget(self, action: "sliderTouchDragExit:", forControlEvents: .TouchCancel)
         
         self.view.addSubview(customSlider)
         
@@ -440,16 +444,16 @@ class ViewController: UICollectionViewController {
             //let nowtime = self.player.currentTime()
             
             if self.sliderNowValue == 0{
+                
+                if self.sliderIsDragging == false{
+                
                 let floatnowtime = Float(CMTimeGetSeconds(self.player.currentTime()))
                 let floatalltime = Float(CMTimeGetSeconds(audioDuration))
                 let slidershouldbe = floatnowtime / floatalltime;
                 
                 self.secondValue = Double(slidershouldbe) * value2
                 self.customSlider.value = slidershouldbe;
-                
-            }else{
-                self.secondValue = Double(self.sliderNowValue) * value2
-                self.customSlider.value = self.sliderNowValue
+                }
                 
             }
             
@@ -516,9 +520,7 @@ class ViewController: UICollectionViewController {
     //MARK:AVPlaye Slider Action
     func sliderValueDidChange(sender:UISlider!)
     {
-        
         sliderNowValue = sender.value
-        //self.customSlider.value = self.sliderNowValue
         
         if self.sliderNowValue != 0{
             
@@ -530,6 +532,14 @@ class ViewController: UICollectionViewController {
             })
         }
         
+    }
+    
+    func sliderTouchDragEnter(sender:UISlider!){
+        self.sliderIsDragging = true
+    }
+    
+    func sliderTouchDragExit(sender:UISlider!){
+        self.sliderIsDragging = false
     }
     
     
