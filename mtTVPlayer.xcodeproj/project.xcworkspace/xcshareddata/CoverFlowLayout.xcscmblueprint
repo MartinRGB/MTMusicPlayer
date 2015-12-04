@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0FBFB078993A8E30684AD0F54DFEC7F60287D3DA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2ADE6DD5FE3F220904FC8623C0EDE339BC93A3D6" : 0,
+    "0FBFB078993A8E30684AD0F54DFEC7F60287D3DA" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B57E253C-1299-44D7-BD38-1AAC474763D2",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2ADE6DD5FE3F220904FC8623C0EDE339BC93A3D6" : "",
+    "0FBFB078993A8E30684AD0F54DFEC7F60287D3DA" : "CoverFlowLayout\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CoverFlowLayout",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CoverFlowLayout.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/broccolii\/CoverFlowLayout.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0FBFB078993A8E30684AD0F54DFEC7F60287D3DA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/broccolii\/LoadingView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2ADE6DD5FE3F220904FC8623C0EDE339BC93A3D6"
+    }
+  ]
+}
