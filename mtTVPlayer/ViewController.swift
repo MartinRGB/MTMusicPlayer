@@ -429,7 +429,7 @@ class ViewController: UICollectionViewController {
     func updateTimetoTimeMarker(){
         
         //右下角当前时间 & 滑块观察
-        secondObserver = player.addPeriodicTimeObserverForInterval(CMTimeMake(60,10000), queue: nil) { (time:CMTime) -> Void in
+        secondObserver = player.addPeriodicTimeObserverForInterval(CMTimeMake(60,60), queue: nil) { (time:CMTime) -> Void in
             
             
             let asset = AVURLAsset(URL: albumData[self.scrollIndex].songurl)
@@ -447,7 +447,10 @@ class ViewController: UICollectionViewController {
                 self.secondValue = Double(slidershouldbe) * value2
                 self.customSlider.value = slidershouldbe;
                 
-                print("DDDDDDD")
+            }else{
+                self.secondValue = Double(self.sliderNowValue) * value2
+                self.customSlider.value = self.sliderNowValue
+                
             }
             
             self.timerWatch()
