@@ -232,7 +232,6 @@ class ViewController: UICollectionViewController {
         customSlider.setMaximumTrackImage(UIImage(named: "min"), forState: .Normal)
         customSlider.setMinimumTrackImage(UIImage(named: "max"), forState: .Normal)
         
-        
         customSlider.addTarget(self, action: "sliderValueDidChange:", forControlEvents: .ValueChanged)
         customSlider.addTarget(self, action: "sliderTouchDragEnter:", forControlEvents: .TouchDown)
         customSlider.addTarget(self, action: "sliderTouchDragExit:", forControlEvents: .TouchUpInside)
@@ -446,11 +445,11 @@ class ViewController: UICollectionViewController {
             if self.sliderNowValue == 0{
                 
                 if self.sliderIsDragging == false{
-                
+                    
                 let floatnowtime = Float(CMTimeGetSeconds(self.player.currentTime()))
                 let floatalltime = Float(CMTimeGetSeconds(audioDuration))
                 let slidershouldbe = floatnowtime / floatalltime;
-                
+                     
                 self.secondValue = Double(slidershouldbe) * value2
 //              self.customSlider.value = slidershouldbe 
 //              可以解开注释看看效果
@@ -527,17 +526,6 @@ class ViewController: UICollectionViewController {
     //MARK:AVPlaye Slider Action
     func sliderValueDidChange(sender:UISlider!)
     {
-        sliderNowValue = sender.value
-        
-        if self.sliderNowValue != 0{
-            
-            self.player.seekToTime(CMTimeMake(Int64(self.sliderNowValue * Float(self.totalValue)) , 1), toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero, completionHandler: { (Bool) -> Void in
-                self.player.play()
-                self.playPauseImageView.image = UIImage(named: "pause")
-                self.sliderNowValue = 0
-                
-            })
-        }
         
     }
     
@@ -547,6 +535,17 @@ class ViewController: UICollectionViewController {
     
     func sliderTouchDragExit(sender:UISlider!){
         self.sliderIsDragging = false
+        
+        sliderNowValue = sender.value
+        if self.sliderNowValue != 0{
+            
+            self.player.seekToTime(CMTimeMake(Int64(self.sliderNowValue * Float(self.totalValue)) , 1), toleranceBefore: kCMTimeZero, toleranceAfter: kCMTimeZero, completionHandler: { (Bool) -> Void in
+                self.player.play()
+                self.playPauseImageView.image = UIImage(named: "pause")
+                self.sliderNowValue = 0
+                
+            })
+        }
     }
     
     
