@@ -452,9 +452,16 @@ class ViewController: UICollectionViewController {
                 let slidershouldbe = floatnowtime / floatalltime;
                 
                 self.secondValue = Double(slidershouldbe) * value2
-                self.customSlider.value = slidershouldbe;
+//              self.customSlider.value = slidershouldbe 
+//              可以解开注释看看效果
+                UIView.animateWithDuration(1, delay: 0, options: UIViewAnimationOptions.CurveLinear, animations: {
+                        
+                        () -> Void in
+                        
+                        self.customSlider.setValue(slidershouldbe, animated: true)
+                        }, completion: { (finished) -> Void in
+                    })
                 }
-                
             }
             
             self.timerWatch()
