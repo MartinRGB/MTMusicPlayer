@@ -23,5 +23,5 @@ I made this player for exercise
 
 
 P.S. thanks to [
-JustinFincher](https://github.com/JustinFincher) [mmoaay](https://github.com/mmoaay) ,they teach me some knowledge about AVFoundation
+JustinFincher](https://github.com/JustinFincher) [mmoaay](https://github.com/mmoaay) [SergioChan](https://github.com/SergioChan) ,they teach me some knowledge about AVFoundation
 
